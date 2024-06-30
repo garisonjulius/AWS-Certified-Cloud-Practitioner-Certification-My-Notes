@@ -6,6 +6,27 @@
 - On-Premises Deployment
 - Hybrid Deployment
 
+Cloud service provider 
+
+- A company that provides multiple cloud services
+- chaining together multiple services creates cloud architecture
+- the cloud services can be accessed through a single API
+- utilizes a metered billing based on usage (per second, per hour)
+- the Cloud Services have rich monitoring built in eg. AWS CloudTrail
+- the Cloud Services have an Infrastructure as a Service (laaS) offering
+- the Cloud Services offer automation via Infrastructure as Code (laC)
+- - if a company provides some but does not meet all of the requirements listed above, then they are a cloud platform
+
+**What is cloud computing**
+
+- Using a network of remote servers hosted on the internet to store, process, and manage data instead of using a local server / personal laptop
+
+**4 Core cloud services**
+
+- compute
+- storage
+- network
+- databases
 
 ## Benefits of Cloud Computing
 
