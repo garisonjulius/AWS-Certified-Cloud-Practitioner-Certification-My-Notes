@@ -76,14 +76,16 @@
     - This results in a dramatic increase in agility for the organization since the cost and time it takes to experiment and develop is significantly lower.
 - **Go global in minutes**
     - Easily deploy your application in multiple regions around the world with just a few clicks. This means you can provide lower latency and a better experience for your customer at minimal cost.
--  **Security
+- Security
   - Don't need to worry about the physical security of the hardware. Configure security access down to the granular level (each service)
-- ** Reliabile
+- Reliable
   - Data backup, data recovery, data replication, and fault tolerance
--  **Elasticity
+- Elasticity
   - Automating the adjustment of resources to meet various workloads
-- **Current 
+- Current 
   - The hardware and software of the cloud will be upgraded and patched by the CSP without interrupting you 
+
+#
 
 - Cost-Effective
 - Global
@@ -93,7 +95,7 @@
 - Elastic
 - Current
 
-$$ Global Infrastructure
+## Global Infrastructure
 
 - There are several regions across the world and each region generally has 3 availability zones (AZ)
   - There are multiple AZ per region for fault tolerance, availability, scalability, and more.  
@@ -102,7 +104,7 @@ $$ Global Infrastructure
 - All billing information appears in US East 1
 - Cost and availability of AWS services vary by region
 
-$$$ Fault Domain
+### Fault Domain
 
 - The fault Domain is a section of the network that is vulnerable to damage if a device or system fails.
   - The purpose of the fault domain is to make sure the damage done is constrained within the domain and doesn't leak out
@@ -113,11 +115,11 @@ $$$ Fault Domain
 - Each AZ is isolated, but the AZ in a region are interconnected
 - Each AZ is a fault domain
 
-$$$ PoP (Point of Presence) 
+### PoP (Point of Presence) 
 - a PoP is an intermediate location between AWS region and the users (data centers or collection of hardware)
 - PoP resources are edge locations and regional edge caches
 
-$$$$ Edge Locations
+#### Edge Locations
 - Edge locations are data centers that hold caches of information of the most popular content so delivery distance to users is minimized
   - There are over 400 edge locations in the world and these edge locations are much closer to users than regions / AZ
   - Eg: CloudFront uses edge locations to cache popular content so popular content is transferred to users quickly
