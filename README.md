@@ -1,5 +1,16 @@
 # AWS Certified Cloud Practitioner Certification - My Notes
 
+**What is cloud computing**
+
+- Using a network of remote servers hosted on the internet to store, process, and manage data instead of using a local server / personal laptop
+
+**4 Core cloud services**
+
+- compute
+- storage
+- network
+- databases
+  
 ## Deployment Models for Cloud Computing
 
 - Cloud-Based Deployment
@@ -16,17 +27,6 @@ Cloud service provider
 - the Cloud Services have an Infrastructure as a Service (laaS) offering
 - the Cloud Services offer automation via Infrastructure as Code (laC)
 - - if a company provides some but does not meet all of the requirements listed above, then they are a cloud platform
-
-**What is cloud computing**
-
-- Using a network of remote servers hosted on the internet to store, process, and manage data instead of using a local server / personal laptop
-
-**4 Core cloud services**
-
-- compute
-- storage
-- network
-- databases
 
 ## Benefits of Cloud Computing
 
