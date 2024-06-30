@@ -1,23 +1,21 @@
 # AWS Certified Cloud Practitioner Certification - My Notes
 
-**What is cloud computing**
+## Vocab (will move it later)
+- Burning platform
+  - Company abandons old technology for new technology without knowing if it would succeed 
+
+##What is cloud computing**
 
 - Using a network of remote servers hosted on the internet to store, process, and manage data instead of using a local server / personal laptop
 
-**4 Core cloud services**
+## 4 Core cloud services**
 
 - compute
 - storage
 - network
 - databases
-  
-## Deployment Models for Cloud Computing
 
-- Cloud-Based Deployment
-- On-Premises Deployment
-- Hybrid Deployment
-
-Cloud service provider 
+## Cloud service provider 
 
 - A company that provides multiple cloud services
 - chaining together multiple services creates cloud architecture
@@ -26,8 +24,42 @@ Cloud service provider
 - the Cloud Services have rich monitoring built in eg. AWS CloudTrail
 - the Cloud Services have an Infrastructure as a Service (laaS) offering
 - the Cloud Services offer automation via Infrastructure as Code (laC)
-- - if a company provides some but does not meet all of the requirements listed above, then they are a cloud platform
+  - if a company provides some but does not meet all of the requirements listed above, then they are a cloud platform
+    
+## Service Types
 
+![img15](./images/img15.png)
+
+### **IaaS (Infrastructure as a Service)** For admins
+
+- Provides access to basic computing resources over the internet.
+- Example AWS Services: EC2, Amazon S3, VPC.
+
+### **PaaS (Platform as a Service)** For developers
+
+- Provides a platform that allows developers to create, distribute and run their applications.
+- Example AWS Services: AWS Elastic Beanstalk, AWS App Runner, AWS OpsWorks.
+
+### **SaaS (Software as a Service)** For customers
+
+- Completed applications delivered to users over the Internet and typically accessed through a web browser.
+- Example AWS Services: Amazon Chime, AWS WorkDocs, Amazon Connect.
+
+### **FaaS (Function as a Service)**
+
+- It is a serverless computing model, allowing users to distribute individual functions.
+- Example AWS Service: AWS Lambda.
+
+## Deployment Models for Cloud Computing
+
+- Cloud-based (cloud native/first cloud) Deployment
+  - Everything was built on the CSP
+- On-Premises Deployment
+  - Everything is built on the company's datacenters
+- Hybrid Deployment
+  - Utilizes both 
+
+#
 ## Benefits of Cloud Computing
 
 - **Trade upfront/capital(CAPEX) expense for/with variable/operational(OPEX) expense**
@@ -43,8 +75,54 @@ Cloud service provider
     - In a cloud computing environment, new IT resources are only a click away, which means that you reduce the time to make those resources available to your developers from weeks to just minutes.
     - This results in a dramatic increase in agility for the organization since the cost and time it takes to experiment and develop is significantly lower.
 - **Go global in minutes**
-    - Easily deploy your application in multiple regions around the world with just a few clicks. This means you can provide lower latency and a better experience for your customers at minimal cost.
+    - Easily deploy your application in multiple regions around the world with just a few clicks. This means you can provide lower latency and a better experience for your customer at minimal cost.
+-  **Security
+  - Don't need to worry about the physical security of the hardware. Configure security access down to the granular level (each service)
+- ** Reliabile
+  - Data backup, data recovery, data replication, and fault tolerance
+-  **Elasticity
+  - Automating the adjustment of resources to meet various workloads
+- **Current 
+  - The hardware and software of the cloud will be upgraded and patched by the CSP without interrupting you 
 
+- Cost-Effective
+- Global
+- Secure
+- Reliable
+- Scalable
+- Elastic
+- Current
+
+$$ Global Infrastructure
+
+- There are several regions across the world and each region generally has 3 availability zones (AZ)
+  - There are multiple AZ per region for fault tolerance, availability, scalability, and more.  
+- 1 AZ consists of multiple data centers
+- All the AZ within a region are interconnected with high-bandwidth low-latency networking
+- All billing information appears in US East 1
+- Cost and availability of AWS services vary by region
+
+$$$ Fault Domain
+
+- The fault Domain is a section of the network that is vulnerable to damage if a device or system fails.
+  - The purpose of the fault domain is to make sure the damage done is constrained within the domain and doesn't leak out
+  - Eg: specific servers on the rack, entire rack on the data center, entire room in the data center, entire data center building 
+- Nested fault domains are possible
+- Fault level is a collection of fault domains
+- Each region is isolated from each other
+- Each AZ is isolated, but the AZ in a region are interconnected
+- Each AZ is a fault domain
+
+$$$ PoP (Point of Presence) 
+- a PoP is an intermediate location between AWS region and the users (data centers or collection of hardware)
+- PoP resources are edge locations and regional edge caches
+
+$$$$ Edge Locations
+- Edge locations are data centers that hold caches of information of the most popular content so delivery distance to users is minimized
+  - There are over 400 edge locations in the world and these edge locations are much closer to users than regions / AZ
+  - Eg: CloudFront uses edge locations to cache popular content so popular content is transferred to users quickly
+- Edge locations act as on/off ramps for the AWS global network 
+    
 ## Design principles AWS in the cloud
 
 - Perform operations as code
@@ -1126,30 +1204,6 @@ AWS customers are allowed to carry out security assessments and penetration test
 - Provides secure and high-quality audio/video conferencing, chat and content sharing.
 - Accessible from any device and offers SDKs for integration.
 - Priced according to users' usage; No prior commitment required.
-
-## Service Types
-
-![img15](./images/img15.png)
-
-### **IaaS (Infrastructure as a Service)** For adminds
-
-- Provides access to basic computing resources over the internet.
-- Example AWS Services: EC2, Amazon S3, VPC.
-
-### **PaaS (Platform as a Service)** For developers
-
-- Provides a platform that allows developers to create, distribute and run their applications.
-- Example AWS Services: AWS Elastic Beanstalk, AWS App Runner, AWS OpsWorks.
-
-### **SaaS (Software as a Service)** For customers
-
-- Completed applications delivered to users over the Internet and typically accessed through a web browser.
-- Example AWS Services: Amazon Chime, AWS WorkDocs, Amazon Connect.
-
-### **FaaS (Function as a Service)**
-
-- It is a serverless computing model, allowing users to distribute individual functions.
-- Example AWS Service: AWS Lambda.
 
 ## **AWS Lightsail**
 
