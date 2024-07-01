@@ -60,6 +60,7 @@
   - Utilizes both 
 
 #
+
 ## Benefits of Cloud Computing
 
 - **Trade upfront/capital(CAPEX) expense for/with variable/operational(OPEX) expense**
@@ -122,9 +123,21 @@
 #### Edge Locations
 - Edge locations are data centers that hold caches of information of the most popular content so delivery distance to users is minimized
   - There are over 400 edge locations in the world and these edge locations are much closer to users than regions / AZ
-  - Eg: CloudFront uses edge locations to cache popular content so popular content is transferred to users quickly
 - Edge locations act as on/off ramps for the AWS global network 
-    
+
+#### Regional Edge Caches
+- Data centers that hold much larger caches of less popular content to reduce full round trip
+
+####Services that use PoP
+- CloudFront: content delivery network (CDN) service that accelerates the delivery of web content to users globally with low latency and high data transfer speeds through edge locations
+- Amazon S3 Transfer Acceleration: generates a special url for users to upload content to nearby edge locations. Once it is in the edge location, it can travel much faster int eh global network
+- AWS Global accelerator: finds the optimal path from users to your application. AWS Global Accelerator provides static anycast IP addresses that serve as entry points for your application. These IP addresses are globally distributed across AWS's network infrastructure. When a user makes a request to your application, DNS routes the request to the nearest AWS Global Accelerator edge location based on network conditions such as latency and health of endpoints. The edge location, part of AWS’s global network, optimizes the network path by forwarding user requests directly to your application endpoints located in AWS Regions. 
+
+###AWS Wavelength Zones
+- Allows for edge computing on 5g networks (aws partered with telecom companies to use their 5g networks) 
+- 
+#
+
 ## Design principles AWS in the cloud
 
 - Perform operations as code
@@ -246,6 +259,7 @@ An *instance store* provides temporary block-level storage for your instance. 
     - Bypasses the public internet for more consistent network performance.
     - Can reduce network costs, increase bandwidth, and provide a more consistent network experience than internet-based connections.
     - without public internet
+
 - **NAT Gateway**:
     - Allows instances in a private subnet to initiate outbound traffic to the internet.
     - Prevents unsolicited inbound traffic from reaching those instances.
@@ -1710,6 +1724,8 @@ Amazon EventBridge is a service that provides real-time access to changes in dat
 ## AWS Local Zones
 
 AWS Local Zones enable AWS to position its services close to users outside of large geographic regions (Regions), enabling users to deliver their applications to end users with low latency. Local Zones are connected to an AWS region (Region), but are close to the user's geographic location.
+
+AWS Local Zones are an extension of AWS region and they provide limited low latency services like the 4 core services. These local zones are closer to users than regions and AZs
 
 ## AWS **Service Health Dashboard**
 
