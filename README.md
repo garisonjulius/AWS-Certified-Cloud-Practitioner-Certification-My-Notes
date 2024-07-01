@@ -2,7 +2,7 @@
 
 ## Vocab (will move it later)
 - Burning platform
-  - Company abandons old technology for new technology without knowing if it would succeed 
+  - Company abandons old technology for new technology without knowing if it will succeed 
 
 ##What is cloud computing**
 
@@ -134,9 +134,33 @@
 - AWS Global accelerator: finds the optimal path from users to your application. AWS Global Accelerator provides static anycast IP addresses that serve as entry points for your application. These IP addresses are globally distributed across AWS's network infrastructure. When a user makes a request to your application, DNS routes the request to the nearest AWS Global Accelerator edge location based on network conditions such as latency and health of endpoints. The edge location, part of AWS’s global network, optimizes the network path by forwarding user requests directly to your application endpoints located in AWS Regions. 
 
 ###AWS Wavelength Zones
-- Allows for edge computing on 5g networks (aws partered with telecom companies to use their 5g networks) 
-- 
-#
+- Allows for edge computing on 5g networks (AWS partnered with telecom companies to use their 5g networks)
+  
+###Data Residency
+- The physical location of where an organization's cloud resources reside
+
+###Compliance Boundaries
+- The regulatory compliance issued by governments/organizations (legal requirement) that describes where the cloud resources can reside
+
+###Data Soverneignty
+The jurisdictional control / legal authority that can be asserted on data because the physical location of the cloud resources is within their jurisdictional boundaries
+
+###AWS Config 
+- Policy as Code service
+- Create rules to check AWS resource configuration and if they deviate you are alerted
+
+### AWS GovCloud
+- Specialized AWS region designed for government agencies
+
+####FedRAMP
+- A US government program that provides a standard approach to security, assessment, authorization, and continuous monitoring of cloud products and services
+
+###AWS Ground Station
+- Lets you control satellite communications, process data, and scale operations without building/managing your ground station
+- A company reaches an agreement with a Satellite Imagery Provider and uses AWS Ground Station to communicate with the satelitte and download S3 image data
+  
+
+
 
 ## Design principles AWS in the cloud
 
