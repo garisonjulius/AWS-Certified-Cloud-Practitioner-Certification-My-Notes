@@ -161,6 +161,65 @@ The jurisdictional control / legal authority that can be asserted on data becaus
   
 ###[AWS Outposts](#aws-outposts)
 
+##Cloud Architecture Terminologies 
+
+- Solution architect is a role that creates technical solutions using multiple systems through research, documentation, and experimentation
+- A cloud architect is a solutions architect who primarily uses cloud services
+
+###High Availability 
+- Ensuring the service will be available by ensuring there is no single point of failure and ensuring a certain level of performance.
+- For Eg, running the workload across multiple AZs so if 1/2 of them are unavailable the service still works
+- We accomplish this through **Elastic Load Balancer**. A load balancer will evenly distribute traffic to multiple servers in 1 or more data centers. If the server/ data center is unavailable, then the load balancer will distribute the traffic to available ones
+
+###High Scalability 
+- Ability to increase your capacity based on increasing traffic, memory, or computing power
+- Vertical Scaling: upgrading to a bigger server
+- Horizontal Scaling: adding more servers of the same size
+
+###High Elasticity
+- Ability to **automatically** increase/decrease capacity based on current demand, traffic, and computing power
+- Scaling out: Adding more servers of the same size
+- Scaling in: Removing underutilized servers of the same size
+- Vertical scaling is hard for traditional architecture so usually only horizontal scaling is described with elasticity
+- We accomplish this through **Auto Scaling Groups**, which is an AWS feature that automatically adds/removes servers based on scaling rules you define based on metrics
+
+###High Fault Tolerance
+- Ability to ensure no single point of failure / preventing chance of failure
+- a fail-over is when you have a plan to shift traffic to a redundant system in case the first system fails
+- A common example is having a secondary system that exits just for backup and becomes the primary system when the original primary system fails.
+- We accomplish this through **RDS Multi-AZ** which is when you have a duplicate database in another AZ in case the primary fails. 
+
+###High Durability
+- Ability to recover from a disaster and prevent the loss of data.
+- Solutions that recover from a disaster are known as Disaster Recovery (DR)
+- We accomplish this with **CloudEndure Disaster Recovery** which continuously replicates your machines into low-cost staging areas in the target account and region to ensure fast and reliable recovery in case of data center failures
+
+###Bussiness Continuity Plan
+- A document that outlines how a business will operate during an unplanned disruption in services
+- Recovery Point Objective: Maximum acceptable amount of data loss after an incident expressed  as an amount of time
+  - How much data are you willing to lose?
+- Recovery Time Objective: maximum amount of downtime your business can tolerate before incurring significant financial loss
+  - How long are you willing to go down?
+
+###Data Recovery Options
+------ LOW -----
+
+- Backup + Restore: Backup and restore in new infrastructure
+  - RTO = Hours -> Low-priority use cases, $
+  - Restore after event
+- Pilot Light: Data is replicated into another region with minimal services running
+  - RTO = 10 min -> Core services, $$
+  - Start/scale after event
+- Warm Standby: Scaled down a copy of infrastructure running ready to scale up
+  - RTO = minute -> Bussiness critical services, $$$
+  - Scale after the event
+- Multi-sire Active: Scaled up a copy of your infrastructure in another region
+  - RTO = real-time -> Mission critical services, $$$$
+
+----- High -----
+
+
+
 ## Design principles AWS in the cloud
 
 - Perform operations as code
@@ -190,7 +249,7 @@ The jurisdictional control / legal authority that can be asserted on data becaus
     - Perfect for in-memory databases and real-time big data analytics.
 - **Accelerated computing instances**:
     - Uses hardware accelerators like GPUs.
-    - Targeted at machine learning, video processing, high-performance computing.
+    - Targeted at machine learning, video processing, and high-performance computing.
 - **Storage optimized instances**:
     - High sequential read/write access.
     - Great for distributed file systems and data warehousing.
@@ -198,7 +257,7 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 
 ## AWS EC2 Instance Store
 
-An *instance store* provides temporary block-level storage for your instance. This storage is located on disks that are physically attached to the host computer. Instance store is ideal for temporary storage of information that changes frequently, such as buffers, caches, scratch data, and other temporary content. It can also be used to store temporary data that you replicate across a fleet of instances, such as a load-balanced pool of web servers.
+An *instance store* provides temporary block-level storage for your instance. This storage is located on disks that are physically attached to the host computer. Instance store is ideal for temporary storage of information that changes frequently, such as buffers, caches, scratch data, and other temporary content. It can also store temporary data that you replicate across a fleet of instances, such as a load-balanced pool of web servers.
 
 
 ## Amazon EC2 Pricing
