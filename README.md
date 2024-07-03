@@ -218,6 +218,7 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 
 ----- High -----
 
+<img width="1067" alt="Screenshot 2024-07-02 at 8 06 59 PM" src="https://github.com/garisonjulius/AWS-Certified-Cloud-Practitioner-Certification-My-Notes/assets/101013769/ef0c31bb-aaf1-45d2-b95e-2d68a11983f5">
 
 
 ## Design principles AWS in the cloud
