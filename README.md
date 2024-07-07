@@ -33,15 +33,16 @@
 ### **IaaS (Infrastructure as a Service)** For admins
 
 - Provides access to basic computing resources over the internet.
+- It allows users to rent virtualized hardware, including servers, storage, and networking components
 - Example AWS Services: EC2, Amazon S3, VPC.
 
 ### **PaaS (Platform as a Service)** For developers
 
 - Provides a platform that allows developers to create, distribute and run their applications.
+- It includes infrastructure (servers, storage, and networking), but also middleware, development tools, business intelligence (BI) services, database management systems, and more.
 - Example AWS Services: AWS Elastic Beanstalk, AWS App Runner, AWS OpsWorks.
 
 ### **SaaS (Software as a Service)** For customers
-
 - Completed applications delivered to users over the Internet and typically accessed through a web browser.
 - Example AWS Services: Amazon Chime, AWS WorkDocs, Amazon Connect.
 
@@ -241,16 +242,16 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 - Cannot create dynamic or repeatable code
 
 ### AWS Cloud Development Kit (CDK)
-- Imperitive tool meaning you say what you want and the rest is filled in
-- Less verbose and can lead to misconfigureation
-- Does more than declaritive and can use your favorite programming languages
-- It is powered by CFN and has a huge library of resuseable cloud componenets called CDK constructs
+- Imperative tool meaning you say what you want and the rest is filled in
+- Less verbose and can lead to misconfiguration
+- Does more than declarative and can use your favorite programming languages
+- It is powered by CFN and has a huge library of reuseable cloud components called CDK constructs
 
 ## Access Keys
 - A key and a secret (aka AWS Credentials) required for programmatic access to AWS resources when interacting with AWS API outside of the management console
 
 ## AWS Documentation
-- A Huge file with documentation on all aws services 
+- A Huge file with documentation on all AWS services 
 
 ## Design principles AWS in the cloud
 
@@ -263,10 +264,19 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 
 ## AWS Shared Responsibility Model
 
+- A cloud security framework that defines the security obligations of the customer and the CSP
+- CSP takes care of **security of the cloud**
+  - Software: Compute, Storage, Databases, and Networking
+  - Hardware: Regions, AZ, Edge Locations, and Physical Locaions
+-  Customer takes care of **Security in the cloud**
+  - Configurations of managed services and third party software: Platforms, Applications, and IAM
+  - Configurations of virtual infrastructure: OS, Network, and Firewall
+  - Security configurations of data: client-side data encryption, server-end encryption, and networking traffic protection 
 ![Image1](./images/img1.png)
 
 ![Image2](./images/img2.png)
 
+<img width="971" alt="Screenshot 2024-07-07 at 11 03 20 AM" src="https://github.com/garisonjulius/AWS-Certified-Cloud-Practitioner-Certification-My-Notes/assets/101013769/51884d90-d62f-44d8-87d9-70f839d2ac3a">
   
 ## Amazon EC2 Instance Types
 
