@@ -267,17 +267,66 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 - A cloud security framework that defines the security obligations of the customer and the CSP
 - CSP takes care of **security of the cloud**
   - Software: Compute, Storage, Databases, and Networking
-  - Hardware: Regions, AZ, Edge Locations, and Physical Locaions
+  - Hardware: Regions, AZ, Edge Locations, and Physical Locations
 -  Customer takes care of **Security in the cloud**
-  - Configurations of managed services and third party software: Platforms, Applications, and IAM
+  - Configurations of managed services and third-party software: Platforms, Applications, and IAM
   - Configurations of virtual infrastructure: OS, Network, and Firewall
-  - Security configurations of data: client-side data encryption, server-end encryption, and networking traffic protection 
+  - Security configurations of data: client-side data encryption, server-end encryption, and networking traffic protection
+
+**If you can configure or store it, then it is the customers responsibility**
+
 ![Image1](./images/img1.png)
 
 ![Image2](./images/img2.png)
 
 <img width="971" alt="Screenshot 2024-07-07 at 11 03 20 AM" src="https://github.com/garisonjulius/AWS-Certified-Cloud-Practitioner-Certification-My-Notes/assets/101013769/51884d90-d62f-44d8-87d9-70f839d2ac3a">
+
+## Compute
+- Allows you to launch virtual machines (VM is an emulation of a physical computing using software)
+- Many VMs can run on the same physical server
+- Highly configurable server 
+- An Amazon Machine Image (AMI) is a predefined configuration for a VM
+- When we launch a VM, we can call it an instance
+
+### Container: 
+- Virtualizing an OS to run multiple workloads in a single instance
+- A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
+- Containers are a lightweight form of virtualization that allows multiple isolated applications or services to run on a single host operating system
+- Generally used in micro-service architecture (when you divide your applications into smaller applications that talk to each other)
+
+### Docker 
+- Most famous container technology
+- docker image: read-only template/blueprint for docker containers. Created only once and stored in docker repositories
+- docker container: running instance of the docker image. Can create multiple containers from the same image
+- **Elastic Container Registery (ECR)** is a respository for container images. Repository means it uses version control, An image is just a saved copy. Manages storage and retrieval of Docker images. ECS and EKS will pull images from here to build containers
+
+- **Elastic Container Service (ECS)** Used to run, stop, and manage docker containers in AWS 
+- **Elastic Kubernetes Services EKS** Automates deploying, scaling, management and sceduling of containers
   
+- You can run ECS and EKS in two different ways
+  - Through EC2: You provision and maintain EC2 instances that the containers run on. For ECS you have to keep an EC2 server running even if you have 0 containers.
+  - Through **ECS Fargate**: A serverless solution. You pay-on-demand per running container. Manages compute resources for containers automatically
+
+### High Performance Computing Service (HPC)
+- A cluster of hundereds/thousands of servers with fast connection to boost computing capacity
+- **AWS ParallelCluster** is a AWS supported cluster manager tool that makes it east to deploy and manage HPC clusters on AWS
+  
+#### Nitro System
+- Combination of dedicated hardware and lightweight hypervisor enabling faster innovation and enhanced security. All new EC2 instances use the Nitro System
+- Nitro Cards - Specialized cards for VPC, EBS, and instance storage
+- Nitro Security Chips: Integrated into motherbaords to protect hardware resources
+- Nitro Hypervisor: lightweight hypervisor that provides high-performance virtualization
+
+- Bare Metal Instance: You can launch EC2 instance with no hypervisor so you can run workloads directly on the hardware for maximum performance and control
+- **Bottle Rocket** is a Linux based OS that is used to run containers on VM or bare metal hosts
+
+- Edge Computing: Practice of processing data closer to where it is generated or consumes rather than soelly on centralized data center / cloud environments
+- Hybrid Computing: When you rin workloads on both on-premise data centers and AWS Virtual Private Cloud (VPC)
+
+###[AWS Outposts](#aws-outposts)
+###[AWS Wavelength](#aws-wavelength-zones)
+
+
 ## Amazon EC2 Instance Types
 
 - **General Purpose instances**:
