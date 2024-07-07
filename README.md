@@ -122,16 +122,16 @@
 - PoP resources are edge locations and regional edge caches
 
 #### Edge Locations
-- Edge locations are data centers that hold caches of information of the most popular content so delivery distance to users is minimized
+- Edge locations are data centers that hold caches of information of the most popular content so the delivery distance to users is minimized
   - There are over 400 edge locations in the world and these edge locations are much closer to users than regions / AZ
 - Edge locations act as on/off ramps for the AWS global network 
 
 #### Regional Edge Caches
-- Data centers that hold much larger caches of less popular content to reduce full round trip
+- Data centers that hold much larger caches of less popular content to reduce full round-trip
 
 ####Services that use PoP
 - CloudFront: content delivery network (CDN) service that accelerates the delivery of web content to users globally with low latency and high data transfer speeds through edge locations
-- Amazon S3 Transfer Acceleration: generates a special url for users to upload content to nearby edge locations. Once it is in the edge location, it can travel much faster int eh global network
+- Amazon S3 Transfer Acceleration: generates a special URL for users to upload content to nearby edge locations. Once it is in the edge location, it can travel much faster in the global network
 - AWS Global accelerator: finds the optimal path from users to your application. AWS Global Accelerator provides static anycast IP addresses that serve as entry points for your application. These IP addresses are globally distributed across AWS's network infrastructure. When a user makes a request to your application, DNS routes the request to the nearest AWS Global Accelerator edge location based on network conditions such as latency and health of endpoints. The edge location, part of AWS’s global network, optimizes the network path by forwarding user requests directly to your application endpoints located in AWS Regions. 
 
 ### AWS Wavelength Zones
@@ -222,20 +222,20 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 <img width="1067" alt="Screenshot 2024-07-02 at 8 06 59 PM" src="https://github.com/garisonjulius/AWS-Certified-Cloud-Practitioner-Certification-My-Notes/assets/101013769/ef0c31bb-aaf1-45d2-b95e-2d68a11983f5">
 
 ## AWS API
-- An http api that you can use by sending http requests using applicaitons that interact with api such as Postlam
+- An HTTP API that you can use by sending HTTP requests using applications that interact with API such as Postlam
 - Each AWS service has its own service endpoint that I can send requests to
 - Usually people interact with the API through **AWS Management Console (web interface)** , **AWS SDK (using your favorite programming language)**, and **AWS CLI (interact through terminal/shell)**
-- ARN (Amazon Resource Name) is a an identifier used to identify resources within an AWS service
-- Follows this format: arn:partition:service:region:account-id:resource
+- ARN (Amazon Resource Name) is an identifier used to identify resources within an AWS service
+- Follows this format: arn:partition:service:region:account-id: resource
 
 ## Infrastructure as Code (LaC)
 - Writing a configuration script to automate creative, updating, and destroying cloud infrastructure
 - It is the blueprint of your cloud infrastructure
 - Allows you to easily share, version, and inventory your infrastructure
-- AWS has two offerings forwriting IaC: **AWS Cloud Formation** and **AWS Cloud Development Kit**
+- AWS has two offerings for writing IaC: **AWS Cloud Formation** and **AWS Cloud Development Kit**
 
 ### AWS Cloud Formation (CFN)
-- Declaritive tool meaning what you see is what you get (explicit) 
+- Declarative tool meaning what you see is what you get (explicit) 
 - More verbose but 0 chance of misconfiguration
 - Allows you to write infrastructure as code as either a JSON or YAML file
 - Simple but can lead to large files
@@ -301,7 +301,7 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 - **Elastic Container Registry (ECR)** is a repository for container images. Repository means it uses version control, An image is just a saved copy. Manages storage and retrieval of Docker images. ECS and EKS will pull images from here to build containers
 
 - **Elastic Container Service (ECS)** Used to run, stop, and manage docker containers in AWS 
-- **Elastic Kubernetes Services EKS** Automates deploying, scaling, management and scheduling of containers
+- **Elastic Kubernetes Services EKS** Automates deploying, scaling, management, and scheduling of containers
   
 - You can run ECS and EKS in two different ways
   - Through EC2: You provision and maintain EC2 instances that the containers run on. For ECS, you must keep an EC2 server running even if you have 0 containers.
@@ -309,7 +309,7 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 
 ### High Performance Computing Service (HPC)
 - A cluster of hundreds/thousands of servers with fast connections to boost computing capacity
-- **AWS ParallelCluster** is an AWS supported cluster manager tool that makes it easier to deploy and manage HPC clusters on AWS
+- **AWS ParallelCluster** is an AWS-supported cluster manager tool that makes it easier to deploy and manage HPC clusters on AWS
   
 #### Nitro System
 - Combination of dedicated hardware and lightweight hypervisor enabling faster innovation and enhanced security. All new EC2 instances use the Nitro System
@@ -326,8 +326,21 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 ###[AWS Outposts](#aws-outposts)
 #
 ###[AWS Wavelength](#aws-wavelength-zones)
+#
+###[AWS Local Zone](#aws-local-zones)
+#
+### VMWare Cloud on AWS
+- Allows you to manage on-premise virtual machines using VMWare as EC2 instances. The data center must be using VMWare for virtualization
 
-
+### Cost and Capacity Managing Resources
+- [EC2 Spot / Savings Plan](#ec2-instance-saving-plans)
+- [AWS Batch](#aws-batch)
+- [AWS Compute Optimizer](#aws-compute-optimizer)
+- EC2 Auto Scaling Groups
+  - Automatically adds / removes EC2 servers to meet demand 
+- [Elastic Load Balancer](#elastic-load-balancer)
+- AWS Elastic Beanstalk
+  - Used to easily deploy web applications 
 ## Amazon EC2 Instance Types
 
 - **General Purpose instances**:
