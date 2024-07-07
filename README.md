@@ -134,77 +134,75 @@
 - Amazon S3 Transfer Acceleration: generates a special url for users to upload content to nearby edge locations. Once it is in the edge location, it can travel much faster int eh global network
 - AWS Global accelerator: finds the optimal path from users to your application. AWS Global Accelerator provides static anycast IP addresses that serve as entry points for your application. These IP addresses are globally distributed across AWS's network infrastructure. When a user makes a request to your application, DNS routes the request to the nearest AWS Global Accelerator edge location based on network conditions such as latency and health of endpoints. The edge location, part of AWS’s global network, optimizes the network path by forwarding user requests directly to your application endpoints located in AWS Regions. 
 
-###AWS Wavelength Zones
+### AWS Wavelength Zones
 - Allows for edge computing on 5g networks (AWS partnered with telecom companies to use their 5g networks)
   
-###Data Residency
+### Data Residency
 - The physical location of where an organization's cloud resources reside
 
-###Compliance Boundaries
+### Compliance Boundaries
 - The regulatory compliance issued by governments/organizations (legal requirement) that describes where the cloud resources can reside
 
-###Data Soverneignty
+### Data Soverneignty
 The jurisdictional control / legal authority that can be asserted on data because the physical location of the cloud resources is within their jurisdictional boundaries
 
-###AWS Config 
+### AWS Config 
 - Policy as Code service
 - Create rules to check AWS resource configuration and if they deviate you are alerted
 
 ### AWS GovCloud
 - Specialized AWS region designed for government agencies
 
-####FedRAMP
+#### FedRAMP
 - A US government program that provides a standard approach to security, assessment, authorization, and continuous monitoring of cloud products and services
 
-###AWS Ground Station
+### AWS Ground Station
 - Lets you control satellite communications, process data, and scale operations without building/managing your ground station
 - A company reaches an agreement with a Satellite Imagery Provider and uses AWS Ground Station to communicate with the satellite and download S3 image data
   
 ###[AWS Outposts](#aws-outposts)
-#
-###[AWS Wave Length](#aws-wavelength-zones)
 
 ##Cloud Architecture Terminologies 
 
 - Solution architect is a role that creates technical solutions using multiple systems through research, documentation, and experimentation
 - A cloud architect is a solutions architect who primarily uses cloud services
 
-###High Availability 
+### High Availability 
 - Ensuring the service will be available by ensuring there is no single point of failure and ensuring a certain level of performance.
 - For Eg, running the workload across multiple AZs so if 1/2 of them are unavailable the service still works
 - We accomplish this through **Elastic Load Balancer**. A load balancer will evenly distribute traffic to multiple servers in 1 or more data centers. If the server/ data center is unavailable, then the load balancer will distribute the traffic to available ones
 
-###High Scalability 
+### High Scalability 
 - Ability to increase your capacity based on increasing traffic, memory, or computing power
 - Vertical Scaling: upgrading to a bigger server
 - Horizontal Scaling: adding more servers of the same size
 
-###High Elasticity
+### High Elasticity
 - Ability to **automatically** increase/decrease capacity based on current demand, traffic, and computing power
 - Scaling out: Adding more servers of the same size
 - Scaling in: Removing underutilized servers of the same size
 - Vertical scaling is hard for traditional architecture so usually only horizontal scaling is described with elasticity
 - We accomplish this through **Auto Scaling Groups**, which is an AWS feature that automatically adds/removes servers based on scaling rules you define based on metrics
 
-###High Fault Tolerance
+### High Fault Tolerance
 - Ability to ensure no single point of failure / preventing chance of failure
 - a fail-over is when you have a plan to shift traffic to a redundant system in case the first system fails
 - A common example is having a secondary system that exits just for backup and becomes the primary system when the original primary system fails.
 - We accomplish this through **RDS Multi-AZ** which is when you have a duplicate database in another AZ in case the primary fails. 
 
-###High Durability
+### High Durability
 - Ability to recover from a disaster and prevent the loss of data.
 - Solutions that recover from a disaster are known as Disaster Recovery (DR)
 - We accomplish this with **CloudEndure Disaster Recovery** which continuously replicates your machines into low-cost staging areas in the target account and region to ensure fast and reliable recovery in case of data center failures
 
-###Bussiness Continuity Plan
+### Bussiness Continuity Plan
 - A document that outlines how a business will operate during an unplanned disruption in services
 - Recovery Point Objective: Maximum acceptable amount of data loss after an incident expressed  as an amount of time
   - How much data are you willing to lose?
 - Recovery Time Objective: maximum amount of downtime your business can tolerate before incurring significant financial loss
   - How long are you willing to go down?
 
-###Data Recovery Options
+### Data Recovery Options
 ------ LOW -----
 
 - Backup + Restore: Backup and restore in new infrastructure
@@ -275,7 +273,7 @@ The jurisdictional control / legal authority that can be asserted on data becaus
   - Configurations of virtual infrastructure: OS, Network, and Firewall
   - Security configurations of data: client-side data encryption, server-end encryption, and networking traffic protection
 
-**If you can configure or store it, then it is the customers responsibility**
+**If you can configure or store it, then it is the customer's responsibility**
 
 ![Image1](./images/img1.png)
 
@@ -284,7 +282,7 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 <img width="971" alt="Screenshot 2024-07-07 at 11 03 20 AM" src="https://github.com/garisonjulius/AWS-Certified-Cloud-Practitioner-Certification-My-Notes/assets/101013769/51884d90-d62f-44d8-87d9-70f839d2ac3a">
 
 ## Compute
-- Allows you to launch virtual machines (VM is an emulation of a physical computing using software)
+- Allows you to launch virtual machines (VM is an emulation of physical computing using software)
 - Many VMs can run on the same physical server
 - Highly configurable server 
 - An Amazon Machine Image (AMI) is a predefined configuration for a VM
@@ -300,32 +298,33 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 - Most famous container technology
 - docker image: read-only template/blueprint for docker containers. Created only once and stored in docker repositories
 - docker container: running instance of the docker image. Can create multiple containers from the same image
-- **Elastic Container Registery (ECR)** is a respository for container images. Repository means it uses version control, An image is just a saved copy. Manages storage and retrieval of Docker images. ECS and EKS will pull images from here to build containers
+- **Elastic Container Registry (ECR)** is a repository for container images. Repository means it uses version control, An image is just a saved copy. Manages storage and retrieval of Docker images. ECS and EKS will pull images from here to build containers
 
 - **Elastic Container Service (ECS)** Used to run, stop, and manage docker containers in AWS 
-- **Elastic Kubernetes Services EKS** Automates deploying, scaling, management and sceduling of containers
+- **Elastic Kubernetes Services EKS** Automates deploying, scaling, management and scheduling of containers
   
 - You can run ECS and EKS in two different ways
-  - Through EC2: You provision and maintain EC2 instances that the containers run on. For ECS you have to keep an EC2 server running even if you have 0 containers.
-  - Through **ECS Fargate**: A serverless solution. You pay-on-demand per running container. Manages compute resources for containers automatically
+  - Through EC2: You provision and maintain EC2 instances that the containers run on. For ECS, you must keep an EC2 server running even if you have 0 containers.
+  - Through **ECS Fargate**: A serverless solution. You pay on demand per running container. Manages to compute resources for containers automatically
 
 ### High Performance Computing Service (HPC)
-- A cluster of hundereds/thousands of servers with fast connection to boost computing capacity
-- **AWS ParallelCluster** is a AWS supported cluster manager tool that makes it east to deploy and manage HPC clusters on AWS
+- A cluster of hundreds/thousands of servers with fast connections to boost computing capacity
+- **AWS ParallelCluster** is an AWS supported cluster manager tool that makes it easier to deploy and manage HPC clusters on AWS
   
 #### Nitro System
 - Combination of dedicated hardware and lightweight hypervisor enabling faster innovation and enhanced security. All new EC2 instances use the Nitro System
 - Nitro Cards - Specialized cards for VPC, EBS, and instance storage
-- Nitro Security Chips: Integrated into motherbaords to protect hardware resources
+- Nitro Security Chips: Integrated into motherboards to protect hardware resources
 - Nitro Hypervisor: lightweight hypervisor that provides high-performance virtualization
 
-- Bare Metal Instance: You can launch EC2 instance with no hypervisor so you can run workloads directly on the hardware for maximum performance and control
-- **Bottle Rocket** is a Linux based OS that is used to run containers on VM or bare metal hosts
+- Bare Metal Instance: You can launch an EC2 instance with no hypervisor so you can run workloads directly on the hardware for maximum performance and control
+- **Bottle Rocket** is a Linux-based OS that is used to run containers on VM or bare metal hosts
 
-- Edge Computing: Practice of processing data closer to where it is generated or consumes rather than soelly on centralized data center / cloud environments
-- Hybrid Computing: When you rin workloads on both on-premise data centers and AWS Virtual Private Cloud (VPC)
+- Edge Computing: Practice of processing data closer to where it is generated or consumed rather than solely on centralized data center/cloud environments
+- Hybrid Computing: When you run workloads on both on-premise data centers and AWS Virtual Private Cloud (VPC)
 
 ###[AWS Outposts](#aws-outposts)
+#
 ###[AWS Wavelength](#aws-wavelength-zones)
 
 
