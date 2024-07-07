@@ -220,6 +220,37 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 
 <img width="1067" alt="Screenshot 2024-07-02 at 8 06 59 PM" src="https://github.com/garisonjulius/AWS-Certified-Cloud-Practitioner-Certification-My-Notes/assets/101013769/ef0c31bb-aaf1-45d2-b95e-2d68a11983f5">
 
+## AWS API
+- An http api that you can use by sending http requests using applicaitons that interact with api such as Postlam
+- Each AWS service has its own service endpoint that I can send requests to
+- Usually people interact with the API through **AWS Management Console (web interface)** , **AWS SDK (using your favorite programming language)**, and **AWS CLI (interact through terminal/shell)**
+- ARN (Amazon Resource Name) is a an identifier used to identify resources within an AWS service
+- Follows this format: arn:partition:service:region:account-id:resource
+
+## Infrastructure as Code (LaC)
+- Writing a configuration script to automate creative, updating, and destroying cloud infrastructure
+- It is the blueprint of your cloud infrastructure
+- Allows you to easily share, version, and inventory your infrastructure
+- AWS has two offerings forwriting IaC: **AWS Cloud Formation** and **AWS Cloud Development Kit**
+
+### AWS Cloud Formation (CFN)
+- Declaritive tool meaning what you see is what you get (explicit) 
+- More verbose but 0 chance of misconfiguration
+- Allows you to write infrastructure as code as either a JSON or YAML file
+- Simple but can lead to large files
+- Cannot create dynamic or repeatable code
+
+### AWS Cloud Development Kit (CDK)
+- Imperitive tool meaning you say what you want and the rest is filled in
+- Less verbose and can lead to misconfigureation
+- Does more than declaritive and can use your favorite programming languages
+- It is powered by CFN and has a huge library of resuseable cloud componenets called CDK constructs
+
+## Access Keys
+- A key and a secret (aka AWS Credentials) required for programmatic access to AWS resources when interacting with AWS API outside of the management console
+
+## AWS Documentation
+- A Huge file with documentation on all aws services 
 
 ## Design principles AWS in the cloud
 
@@ -236,7 +267,7 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 
 ![Image2](./images/img2.png)
 
-
+  
 ## Amazon EC2 Instance Types
 
 - **General Purpose instances**:
