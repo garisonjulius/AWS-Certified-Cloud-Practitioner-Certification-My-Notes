@@ -161,6 +161,8 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 - A company reaches an agreement with a Satellite Imagery Provider and uses AWS Ground Station to communicate with the satellite and download S3 image data
   
 ###[AWS Outposts](#aws-outposts)
+#
+###[AWS Wave Length](#aws-wavelength-zones)
 
 ##Cloud Architecture Terminologies 
 
