@@ -170,7 +170,7 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 ### High Availability 
 - Ensuring the service will be available by ensuring there is no single point of failure and ensuring a certain level of performance.
 - For Eg, running the workload across multiple AZs so if 1/2 of them are unavailable the service still works
-- We accomplish this through **Elastic Load Balancer**. A load balancer will evenly distribute traffic to multiple servers in 1 or more data centers. If the server/ data center is unavailable, then the load balancer will distribute the traffic to available ones
+- We accomplish this through **Elastic Load Balancer**. 
 
 ### High Scalability 
 - Ability to increase your capacity based on increasing traffic, memory, or computing power
@@ -337,10 +337,25 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 - [AWS Batch](#aws-batch)
 - [AWS Compute Optimizer](#aws-compute-optimizer)
 - EC2 Auto Scaling Groups
-  - Automatically adds / removes EC2 servers to meet demand 
-- [Elastic Load Balancer](#elastic-load-balancer)
+  - Automatically adds/removes EC2 servers to meet demand 
+- Elastic Load Balancer
+  - A load balancer will evenly distribute traffic to multiple servers in 1 or more data centers. If the server/ data center is unavailable, then the load balancer will distribute the traffic to available ones   
 - AWS Elastic Beanstalk
-  - Used to easily deploy web applications 
+  - Used to easily deploy web applications
+ 
+## Storage Services
+
+#[Elastic Block Store](#amazon-elastic-block-store-(ebs))
+
+#[Elastic File Storage](#amazon-elastic-file-system-(efs))
+
+#[S3](#aws-s3-storage-classes)
+
+
+
+
+
+
 ## Amazon EC2 Instance Types
 
 - **General Purpose instances**:
@@ -497,6 +512,8 @@ An *instance store* provides temporary block-level storage for your instance. 
 - Has the ability to optionally enlarge or change volumes. (auto scale)
 - **Amazon EBS pricing includes three factors: volumes, snapshots, data transfer**
 - **It is not a regional service**
+- When you need a virtual hardrive attached to a VM
+- Stores blocks (fixed size chunks)
 
 ## Amazon Elastic File System (EFS)
 
@@ -507,10 +524,13 @@ An *instance store* provides temporary block-level storage for your instance. 
 - It comes with POSIX-compliant file system semantics, which makes it suitable for many applications.
 - It is a regional service.
 - Costs each write and read.
+- Stores files
 
 
 ## AWS S3 Storage Classes
 
+- Stores objects
+  
 ![Image6](./images/img6.png)
 
 ![Image7](./images/img7.png)
