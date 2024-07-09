@@ -345,9 +345,9 @@ The jurisdictional control / legal authority that can be asserted on data becaus
  
 ## Storage Services
 
-#[Elastic Block Store](#amazon-elastic-block-store-(ebs))
+[Amazon Elastic Block Store (EBS)](#amazon-elastic-block-store-ebs)
 
-#[Elastic File Storage](#amazon-elastic-file-system-(efs))
+#[Amazon Elastic File Storage](#amazon-elastic-file-system-efs)
 
 #[S3](#aws-s3-storage-classes)
 
