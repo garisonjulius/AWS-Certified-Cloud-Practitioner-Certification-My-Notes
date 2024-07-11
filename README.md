@@ -345,15 +345,63 @@ The jurisdictional control / legal authority that can be asserted on data becaus
  
 ## Storage Services
 
-[Amazon Elastic Block Store (EBS)](#amazon-elastic-block-store-ebs)
+#[Amazon Elastic Block Store (EBS)](#amazon-elastic-block-store-ebs)
+- Manages data as blocks
 
 #[Amazon Elastic File Storage](#amazon-elastic-file-system-efs)
+- Manages data as files and file heirarchy 
 
 #[S3](#aws-s3-storage-classes)
+- Manages data as objects with unlimited storage
+- S3 buckets hold objects (can also store folders which hold objects)
 
 
+### Snow Family Members
+- The snow family are storage and compute devices used to physically move data in/out of the cloud when moving data over the internet is too slow/difficult/costly
+- g
+
+#[Snow](#aws-snow-family-members)
+
+### Summary of the services
+- (S3): a serverless object storage service with unlimited storage
+- (S3 Glacier): a cold storage service with a low cost storage for archiving and long-term backup.
+- (Elastic Block Store (EBS)): Stores data in fixed chunks (blocks). A virtual hardrive that is attached to EC2 instances
+- (Elastic File Storage) (EFS): A cloud-native network based (Files are stored on a central server and accessed over a network by client machines) file system service. A file storage that you can mount to multiple EC2 instances at the same time, used when you ened to share files between multipel servers.
+- [Storage Gateway](#aws-storage-gateway)
+- (Snow Family): Physically moving data to the cloud
+- (AWS Backup): A fully managed backup service that makes it easy to centralize and automate the backup of data across multipel AWS services such as EC3, EBS, RDS, EFS, and more
+
+## Databases
+- Relational Database is tabular data storage
+- Key-value database is non-relational and that uses simple key-value pairs ('value' can be a list of values) 
+- Document store is a non-relational database that stores documents, mostly in the form of json
+- **DynamoDB** is a serverless NoSQL database that is known for scaling up and is very fast. Use this when you want a massively scaleable database
+- **DocumentDB** is a NoSQL database that is mongoDB compatible.
+- **Amazon Keyspaces** is a fully managed apache cassandra database that is similar to dynamoDB.
+-  **Relational Database Services (RDS)** is a relational database service :)
+  - Supports MySQl, Postgre, and more
+  - **Aurora** whis is a fully managed database of MySQL and PSQl. Use this when you want a highly available, durable, scalable, and sequre relational database
+- Redshift: a petabyte-size data-warehouse that can be expensive since they try to keep the data hot. hot means we can do a complex query and get lots of data back fast. Use this when you need large amounts of data fast
+- ElastiCache: a managed database of in-memory and caching open-source databases. Use this when you need to improve the performance of an applicaiton by adding a caching later in front of a database or a webserver
+- Neptune: Managed graph database where data in represented as interconnected nodes. Use this when you need to understand the connections between the data
+- [Amazon Quantum Ledger Database](#amazon-quantum-ledger-database-amazon-qlbd)
+  - Use when you need to record history of financial activities that can be trusted
+- [Amazon Timestreams](#amazon-timestreams)
+  - Use when you need to measure how things change over time
+- [Database Migration Service (DMS)](#aws-database-migration-service-dms)
 
 
+## Networking
+
+<img width="664" alt="Screenshot 2024-07-10 at 6 56 19 PM" src="https://github.com/garisonjulius/AWS-Certified-Cloud-Practitioner-Certification-My-Notes/assets/101013769/23bfefb2-0fc8-4f36-b118-ce3b11635b60">
+
+<img width="1394" alt="Screenshot 2024-07-10 at 6 56 39 PM" src="https://github.com/garisonjulius/AWS-Certified-Cloud-Practitioner-Certification-My-Notes/assets/101013769/78525656-2d9c-4900-ae0d-49480c799529">
+
+### [Virtual Private Cloud (VPC)](#vpc)
+- A Logically isolared section of the AWS network where you launch your resources
+
+### [Subnets](#subnets)
+- 
 
 
 ## Amazon EC2 Instance Types
