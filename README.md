@@ -400,7 +400,7 @@ The jurisdictional control / legal authority that can be asserted on data becaus
 ### [Virtual Private Cloud (VPC)](#vpc)
 - A Logically isolared section of the AWS network where you launch your resources
 
-### [Subnets](#subnets)
+### [Subnet](#subnets)
 - 
 
 
